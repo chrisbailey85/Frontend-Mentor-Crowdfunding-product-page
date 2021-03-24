@@ -28,6 +28,7 @@ header .container {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 90%;
+  height: 50px;
   margin: 0 auto;
   padding-top: 1rem;
 }
@@ -36,6 +37,10 @@ header .container {
   background-color: transparent;
   border: none;
   padding: 0.5rem;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 .nav-bar {
@@ -52,6 +57,12 @@ header .container {
   border-radius: 10px;
   -webkit-transform: scale(0);
           transform: scale(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 
 .nav-bar ul {
@@ -74,10 +85,8 @@ header .container {
 }
 
 .nav-bar.show {
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: scale(1) translateX(-50%);
+          transform: scale(1) translateX(-50%);
 }
 
 /* nav bar end */
@@ -123,10 +132,18 @@ p {
   border-radius: 50px;
   color: #fff;
   font-weight: 700;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
 }
 
 .btn:focus {
   outline: none;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 /* all buttons styles end*/
@@ -165,6 +182,7 @@ p {
           align-items: center;
   height: 40px;
   background-color: rgba(122, 122, 122, 0.4);
+  cursor: pointer;
 }
 
 .welcome-section .bookmark span {
@@ -173,6 +191,11 @@ p {
 
 .welcome-section .bookmark img {
   height: 40px;
+}
+
+.welcome-section .bookmark.bookedmarked {
+  background-color: #147b74;
+  color: white;
 }
 
 /* backers info */
@@ -337,6 +360,10 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.model-title .model-close:focus {
+  outline: none;
 }
 
 .model-title .model-close img {
@@ -585,32 +612,44 @@ p {
     display: none;
   }
   .nav-bar {
-    position: absolute;
+    position: static;
     background-color: transparent;
     top: 0;
-    left: 50%;
+    left: 0;
     -webkit-transform: translateX(0);
             transform: translateX(0);
     width: 50%;
-    height: 0;
+    height: 100px;
+    text-align: left;
+    padding: 0;
+    border-radius: 10px;
     -webkit-transform: scale(1);
             transform: scale(1);
-    padding-top: 1.4rem;
-    padding-right: 0;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
   }
   .nav-bar ul {
     list-style-type: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
   }
   .nav-bar ul li {
     border-bottom: none;
-    padding: 0 1.4rem;
+    padding: 0;
+  }
+  .nav-bar ul li:first-child {
+    padding-top: 0;
   }
   .nav-bar ul li a {
     text-decoration: none;
@@ -708,6 +747,17 @@ p {
   .model {
     width: 70%;
   }
+  .model .card-heading div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .model .card-heading div h1 {
+    margin-right: 0.5rem;
+  }
   .model .pledge.show {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -756,6 +806,20 @@ p {
   .nav-bar {
     left: 70%;
     width: 30%;
+  }
+}
+
+/* hover styles*/
+@media (pointer: fine) {
+  .btn:hover {
+    background-color: #147b74;
+  }
+  .model h1:hover {
+    color: #3cb4ac;
+  }
+  .model input:hover,
+  h1:hover {
+    border-color: #3cb4ac;
   }
 }
 /*# sourceMappingURL=main.css.map */
