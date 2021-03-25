@@ -181,8 +181,8 @@ p {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  background-color: rgba(122, 122, 122, 0.4);
-  cursor: pointer;
+  background-color: rgba(122, 122, 122, 0.2);
+  color: #7a7a7a;
 }
 
 .welcome-section .bookmark span {
@@ -193,9 +193,8 @@ p {
   height: 40px;
 }
 
-.welcome-section .bookmark.bookedmarked {
-  background-color: #147b74;
-  color: white;
+.welcome-section .bookmark.bookmarked {
+  color: #147b74;
 }
 
 /* backers info */
@@ -519,6 +518,11 @@ p {
   color: #000;
   font-size: 1rem;
   padding-top: 2px;
+  -moz-appearance: textfield;
+}
+
+.model .pledge-amount-container .pledge-input-container .pledge-amount::-webkit-inner-spin-button, .model .pledge-amount-container .pledge-input-container .pledge-amount-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .model .pledge-amount-container .pledge-input-container .pledge-amount::-webkit-input-placeholder {
@@ -535,6 +539,12 @@ p {
 
 .model .pledge-amount-container .pledge-input-container .pledge-amount::placeholder {
   font-size: 1rem;
+}
+
+.model .pledge-amount-container.no-reward {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .model .pledge-amount-container .pledge-btn {
@@ -772,7 +782,10 @@ p {
             transform: translateX(-4%);
   }
   .model .pledge.show .pledge-amount-container {
-    min-width: 200px;
+    width: 200px;
+  }
+  .model .pledge.show .pledge-amount-container.no-reward {
+    width: 100px;
   }
   .model .pledge.show .pledge-title {
     display: -webkit-box;
@@ -791,13 +804,16 @@ p {
     right: 1.4rem;
   }
   .thank-you-model {
-    width: 70%;
+    width: 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .nav-bar {
     left: 50%;
+    width: 40%;
+  }
+  .thank-you-model {
     width: 40%;
   }
 }
@@ -807,6 +823,9 @@ p {
     left: 70%;
     width: 30%;
   }
+  .thank-you-model {
+    width: 30%;
+  }
 }
 
 /* hover styles*/
@@ -814,12 +833,11 @@ p {
   .btn:hover {
     background-color: #147b74;
   }
+  .bookmark:hover {
+    background-color: #eee;
+  }
   .model h1:hover {
     color: #3cb4ac;
-  }
-  .model input:hover,
-  h1:hover {
-    border-color: #3cb4ac;
   }
 }
 /*# sourceMappingURL=main.css.map */

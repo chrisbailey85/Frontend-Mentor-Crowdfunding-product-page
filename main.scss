@@ -139,7 +139,8 @@ p {
     display: flex;
     align-items: center;
     height: 40px;
-    background-color: rgba($dark-gray, 0.4);
+    background-color: rgba($dark-gray, 0.2);
+    color: $dark-gray;
     span {
       display: none;
     }
@@ -147,9 +148,8 @@ p {
       height: 40px;
     }
   }
-  .bookmark.bookedmarked {
-    background-color: $dark-cyan;
-    color: white;
+  .bookmark.bookmarked {
+    color: $dark-cyan;
   }
 }
 /* backers info */
@@ -406,10 +406,18 @@ p {
         color: #000;
         font-size: 1rem;
         padding-top: 2px;
+        -moz-appearance: textfield;
+        &::-webkit-inner-spin-button,
+        &-webkit-outer-spin-button {
+          -webkit-appearance: none;
+        }
         &::placeholder {
           font-size: 1rem;
         }
       }
+    }
+    &.no-reward {
+      justify-content: flex-end;
     }
     .pledge-btn {
       width: 100px;
@@ -600,7 +608,10 @@ p {
         transform: translateX(-4%);
       }
       .pledge-amount-container {
-        min-width: 200px;
+        width: 200px;
+      }
+      .pledge-amount-container.no-reward {
+        width: 100px;
       }
       .pledge-title {
         display: flex;
@@ -617,7 +628,7 @@ p {
     }
   }
   .thank-you-model {
-    width: 70%;
+    width: 50%;
   }
 }
 
@@ -627,10 +638,16 @@ p {
     width: 40%;
     // overflow-x: hidden;
   }
+  .thank-you-model {
+    width: 40%;
+  }
 }
 @media (min-width: 1440px) {
   .nav-bar {
     left: 70%;
+    width: 30%;
+  }
+  .thank-you-model {
     width: 30%;
   }
 }
@@ -640,6 +657,9 @@ p {
 @media (pointer: fine) {
   .btn:hover {
     background-color: $dark-cyan;
+  }
+  .bookmark:hover {
+    background-color: #eee;
   }
   .model h1:hover {
     color: $moderate-cyan;

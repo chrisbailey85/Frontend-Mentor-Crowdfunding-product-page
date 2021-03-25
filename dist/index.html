@@ -62,8 +62,12 @@
           >
             Back this project
           </button>
-          <button class="btn bookmark" id="bookmark">
-            <img src="./images/icon-bookmark.svg" alt="" />
+          <button class="btn bookmark">
+            <img
+              class="bookmark-img"
+              src="./images/icon-bookmark.svg"
+              alt="bookmark icon"
+            />
             <span>Bookmark</span>
           </button>
         </div>
@@ -203,6 +207,13 @@
                 product updates via email.
               </p>
             </div>
+            <div class="pledge">
+              <div class="line"></div>
+              <p>Enter your pledge</p>
+              <div class="pledge-amount-container no-reward">
+                <button class="btn pledge-btn">Continue</button>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -231,7 +242,7 @@
             <div class="card-selection">
               <h3>101 <span class="model-left">left</span></h3>
 
-              <div class="pledge show">
+              <div class="pledge">
                 <div class="line"></div>
                 <p>Enter your pledge</p>
                 <div class="pledge-amount-container">
@@ -239,7 +250,7 @@
                     <input
                       type="number"
                       class="pledge-amount"
-                      placeholder="25"
+                      value="25"
                       min="25"
                     />
                   </div>
@@ -274,7 +285,7 @@
             </div>
             <div class="card-selection">
               <h3>64 <span class="model-left">left</span></h3>
-              <div class="pledge show">
+              <div class="pledge">
                 <div class="line"></div>
                 <p>Enter your pledge</p>
                 <div class="pledge-amount-container">
@@ -282,7 +293,7 @@
                     <input
                       type="number"
                       class="pledge-amount"
-                      placeholder="75"
+                      value="75"
                       min="75"
                     />
                   </div>
