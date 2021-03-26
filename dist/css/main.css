@@ -331,6 +331,10 @@ p {
   width: 90%;
 }
 
+.model h1 {
+  cursor: pointer;
+}
+
 .model-title {
   position: relative;
 }
@@ -388,7 +392,7 @@ p {
   margin-bottom: 1.4rem;
 }
 
-.model .card-heading label {
+.model .card-heading .radio-btn-container {
   position: relative;
   top: 0;
   left: 0;
@@ -397,7 +401,7 @@ p {
   margin-right: 10px;
 }
 
-.model .card-heading label span {
+.model .card-heading .radio-btn-container .radio-btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -408,7 +412,11 @@ p {
   border-radius: 50%;
 }
 
-.model .card-heading label input[type="radio"] {
+.model .card-heading .radio-btn-container .radio-btn.hovered-h1 {
+  border: solid #3cb4ac 1px;
+}
+
+.model .card-heading .radio-btn-container input[type="radio"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -417,8 +425,8 @@ p {
   opacity: 0;
 }
 
-.model .card-heading label input[type="radio"].out-of-stock {
-  cursor: not-allowed;
+.model .card-heading .radio-btn-container input[type="radio"].out-of-stock {
+  cursor: none;
 }
 
 .model .card-heading input[type="radio"]:checked + span::before {
@@ -525,20 +533,9 @@ p {
   -webkit-appearance: none;
 }
 
-.model .pledge-amount-container .pledge-input-container .pledge-amount::-webkit-input-placeholder {
-  font-size: 1rem;
-}
-
-.model .pledge-amount-container .pledge-input-container .pledge-amount:-ms-input-placeholder {
-  font-size: 1rem;
-}
-
-.model .pledge-amount-container .pledge-input-container .pledge-amount::-ms-input-placeholder {
-  font-size: 1rem;
-}
-
-.model .pledge-amount-container .pledge-input-container .pledge-amount::placeholder {
-  font-size: 1rem;
+.model .pledge-amount-container .pledge-input-container .pledge-amount:focus {
+  outline: none;
+  border-color: #3cb4ac;
 }
 
 .model .pledge-amount-container.no-reward {
@@ -757,7 +754,7 @@ p {
   .model {
     width: 70%;
   }
-  .model .card-heading div {
+  .model .card-heading label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -765,7 +762,7 @@ p {
         -ms-flex-align: center;
             align-items: center;
   }
-  .model .card-heading div h1 {
+  .model .card-heading label h1 {
     margin-right: 0.5rem;
   }
   .model .pledge.show {
@@ -816,6 +813,11 @@ p {
   .thank-you-model {
     width: 40%;
   }
+  .model .pledge.show .line {
+    width: 107%;
+    -webkit-transform: translateX(-3%);
+            transform: translateX(-3%);
+  }
 }
 
 @media (min-width: 1440px) {
@@ -825,6 +827,11 @@ p {
   }
   .thank-you-model {
     width: 30%;
+  }
+  .model .pledge.show .line {
+    width: 104%;
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
   }
 }
 
@@ -838,6 +845,10 @@ p {
   }
   .model h1:hover {
     color: #3cb4ac;
+  }
+  .model .out-of-stock h1:hover {
+    color: inherit;
+    cursor: default;
   }
 }
 /*# sourceMappingURL=main.css.map */

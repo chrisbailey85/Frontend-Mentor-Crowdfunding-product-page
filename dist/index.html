@@ -189,7 +189,7 @@
         <div class="cards">
           <div class="card">
             <div class="card-heading">
-              <label>
+              <div class="radio-btn-container">
                 <input
                   type="radio"
                   name="no-reward"
@@ -197,8 +197,10 @@
                   class="radio"
                 />
                 <span class="radio-btn"></span>
+              </div>
+              <label for="no-reward">
+                <h1>Pledge with no reward</h1>
               </label>
-              <h1>Pledge with no reward</h1>
             </div>
             <div class="card-info">
               <p>
@@ -210,7 +212,15 @@
             <div class="pledge">
               <div class="line"></div>
               <p>Enter your pledge</p>
-              <div class="pledge-amount-container no-reward">
+              <div class="pledge-amount-container">
+                <div class="pledge-input-container">
+                  <input
+                    type="number"
+                    class="pledge-amount"
+                    value="0"
+                    min="0"
+                  />
+                </div>
                 <button class="btn pledge-btn">Continue</button>
               </div>
             </div>
@@ -218,7 +228,7 @@
 
           <div class="card">
             <div class="card-heading">
-              <label>
+              <div class="radio-btn-container">
                 <input
                   type="radio"
                   name="bamboo-stand"
@@ -226,11 +236,11 @@
                   class="radio"
                 />
                 <span class="radio-btn"></span>
-              </label>
-              <div>
+              </div>
+              <label for="bamboo-stand">
                 <h1>Bamboo Stand</h1>
                 <h2>Pledge $25 or more</h2>
-              </div>
+              </label>
             </div>
             <div class="card-info">
               <p>
@@ -262,7 +272,7 @@
 
           <div class="card">
             <div class="card-heading">
-              <label>
+              <div class="radio-btn-container">
                 <input
                   type="radio"
                   name="black-edition"
@@ -270,11 +280,11 @@
                   class="radio"
                 />
                 <span class="radio-btn"></span>
-              </label>
-              <div class="pledge-title">
+              </div>
+              <label for="black-edition" class="pledge-title">
                 <h1>Black Edition Stand</h1>
                 <h2>Pledge $75 or more</h2>
-              </div>
+              </label>
             </div>
             <div class="card-info">
               <p>
@@ -305,18 +315,20 @@
 
           <div class="card out-of-stock">
             <div class="card-heading">
-              <input
-                type="radio"
-                name="mahogany-special"
-                id="mahogany-special"
-                class="radio out-of-stock"
-                disabled
-              />
+              <div class="radio-btn-container">
+                <input
+                  type="radio"
+                  name="mahogany-special"
+                  id="mahogany-special"
+                  class="radio out-of-stock"
+                  disabled
+                />
+              </div>
 
-              <div>
+              <label for="mahogany-special">
                 <h1>Mahogany Special Edition</h1>
                 <h2>Pledge $200 or more</h2>
-              </div>
+              </label>
             </div>
             <div class="card-info">
               <p>

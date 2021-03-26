@@ -5,6 +5,7 @@ const modelOpenBtns = document.querySelectorAll('.model-open-btn');
 const htmlHeight = document.querySelector('html').scrollHeight;
 const modelContainer = document.querySelector('.model-container');
 const modelCards = document.querySelectorAll('.model-container .card');
+const modelCardsH1s = document.querySelectorAll('.model-container .card h1');
 const modelContainerBtn = document.querySelectorAll('.pledge-btn');
 const thankYoumodelContainer = document.querySelector('.thank-you-model-container');
 const modelCloseBtn = document.querySelector('.model-close');
@@ -14,7 +15,9 @@ const bookmarkBtnSpan = document.querySelector('.bookmark span');
 const bookmarkBtnImg = document.querySelector('.bookmark-img');
 const radioBtns = document.querySelectorAll('.radio');
 const pledgeContainer = document.querySelectorAll('.pledge');
+const radioBtnSpan = document.querySelectorAll('.radio-btn');
 
+setModelsHeight();
 
 hamburger.addEventListener('click', () => {
     nav.classList.contains('show') ? hamburgerImg.src = './images/icon-hamburger.svg' : hamburgerImg.src = './images/icon-close-menu.svg';
@@ -65,9 +68,18 @@ bookmarkBtn.addEventListener('click', () => {
     }
 })
 
-setModelsHeight();
 
-
+modelCardsH1s.forEach((h1, idx) => {
+    radioBorderColor(h1, idx)
+})
+function radioBorderColor(h1, idx) {
+    h1.addEventListener('mouseenter', () => {
+        radioBtnSpan[idx].classList.toggle('hovered-h1')
+    })
+    h1.addEventListener('mouseleave', () => {
+        radioBtnSpan[idx].classList.toggle('hovered-h1')
+    })
+}
 function toggleShow(elm) {
     elm.classList.toggle('show');
 }

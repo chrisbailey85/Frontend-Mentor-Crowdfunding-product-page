@@ -265,6 +265,9 @@ p {
 .model {
   margin: 30vh auto;
   width: 90%;
+  h1 {
+    cursor: pointer;
+  }
   &-title {
     position: relative;
     h2 {
@@ -302,14 +305,14 @@ p {
     display: flex;
     align-items: center;
     margin-bottom: 1.4rem;
-    label {
+    .radio-btn-container {
       position: relative;
       top: 0;
       left: 0;
       height: 20px;
       width: 20px;
       margin-right: 10px;
-      span {
+      .radio-btn {
         position: absolute;
         top: 0;
         left: 0;
@@ -318,6 +321,9 @@ p {
         pointer-events: none;
         border: solid rgba($dark-gray, 0.4) 1px;
         border-radius: 50%;
+        &.hovered-h1 {
+          border: solid $moderate-cyan 1px;
+        }
       }
       input[type="radio"] {
         position: absolute;
@@ -327,7 +333,7 @@ p {
         width: 20px;
         opacity: 0;
         &.out-of-stock {
-          cursor: not-allowed;
+          cursor: none;
         }
       }
     }
@@ -411,8 +417,9 @@ p {
         &-webkit-outer-spin-button {
           -webkit-appearance: none;
         }
-        &::placeholder {
-          font-size: 1rem;
+        &:focus {
+          outline: none;
+          border-color: $moderate-cyan;
         }
       }
     }
@@ -593,7 +600,7 @@ p {
   }
   .model {
     width: 70%;
-    .card-heading div {
+    .card-heading label {
       display: flex;
       align-items: center;
       h1 {
@@ -641,6 +648,10 @@ p {
   .thank-you-model {
     width: 40%;
   }
+  .model .pledge.show .line {
+    width: 107%;
+    transform: translateX(-3%);
+  }
 }
 @media (min-width: 1440px) {
   .nav-bar {
@@ -649,6 +660,10 @@ p {
   }
   .thank-you-model {
     width: 30%;
+  }
+  .model .pledge.show .line {
+    width: 104%;
+    transform: translateX(-2%);
   }
 }
 
@@ -663,5 +678,9 @@ p {
   }
   .model h1:hover {
     color: $moderate-cyan;
+  }
+  .model .out-of-stock h1:hover {
+    color: inherit;
+    cursor: default;
   }
 }
