@@ -30,7 +30,8 @@ modelOpenBtns.forEach((btn, idx) => btn.addEventListener('click', () => {
         pledgeContainer[idx].classList.add('show');
         modelCards[idx].style.borderColor = '#3cb4ac';
     }
-
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     toggleShow(modelContainer);
 }));
 
@@ -48,6 +49,8 @@ radioBtns.forEach((btn, idx) => btn.addEventListener('click', () => {
     }
 }))
 modelContainerBtn.forEach(btn => btn.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     toggleShow(modelContainer);
     toggleShow(thankYoumodelContainer);
 }));
